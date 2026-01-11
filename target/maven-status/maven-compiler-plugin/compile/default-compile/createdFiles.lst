@@ -1,0 +1,17 @@
+com\flameclans\profil\listeners\ChatInputListener$1.class
+com\flameclans\profil\listeners\SettingsGUIListener.class
+com\flameclans\profil\commands\ProfileCommand.class
+com\flameclans\profil\placeholders\ProfilePlaceholderExpansion.class
+com\flameclans\profil\data\Profile.class
+com\flameclans\profil\utils\ItemBuilder.class
+com\onix\profil\Profil.class
+com\flameclans\profil\gui\ReviewGUI.class
+com\flameclans\profil\listeners\ChatInputListener.class
+com\flameclans\profil\gui\ProfileGUI.class
+com\flameclans\profil\ProfilePlugin.class
+com\flameclans\profil\gui\SettingsGUI.class
+com\flameclans\profil\ProfilePlugin$SocialMediaType.class
+com\flameclans\profil\data\Review.class
+com\flameclans\profil\database\DatabaseManager.class
+com\flameclans\profil\listeners\ProfileGUIListener.class
+com\flameclans\profil\listeners\ReviewGUIListener.class

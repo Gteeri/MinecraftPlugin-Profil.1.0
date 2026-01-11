@@ -1,0 +1,17 @@
+name: Profil
+version: 1.0-SNAPSHOT
+main: com.flameclans.profil.ProfilePlugin
+api-version: 1.21
+authors: [FlameClans]
+description: Продвинутая система профилей игроков с отзывами и рейтингом.
+softdepend: [PlaceholderAPI]
+permissions:
+  profil.command.profile:
+    description: Доступ к основной команде профиля.
+    default: true
+  profil.admin.manage:
+    description: Доступ к управлению чужими профилями (админ).
+    default: op
+  profil.review.ban:
+    description: Право на блокировку возможности оставлять отзывы.
+    default: op

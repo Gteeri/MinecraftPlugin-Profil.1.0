@@ -1,0 +1,214 @@
+# ==========================================================
+#                  Profil - Конфигурация
+# ==========================================================
+
+# Настройки базы данных
+database:
+  # Тип базы данных: SQLITE (локально) или MYSQL (внешняя БД)
+  # SQLITE: данные хранятся в папке плагина (profiles.db). Идеально для одного сервера.
+  # MYSQL: используйте для синхронизации профилей между несколькими серверами.
+  type: SQLITE
+  
+  sqlite:
+    filename: profiles.db
+    
+  mysql:
+    host: localhost
+    port: 3306
+    database: profil
+    username: root
+    password: ""
+    useSSL: false
+
+# Имя сервера (отображается в отзывах, чтобы знать, где он был оставлен)
+server_name: "Survival"
+
+# Настройка команды плагина
+# После изменения команды необходим ПЕРЕЗАПУСК сервера.
+command:
+  name: "profile"
+  aliases: 
+    - "profil"
+    - "p"
+
+# ==========================================================
+#                  Настройка Интерфейсов (GUI)
+# ==========================================================
+
+gui:
+  # Настройки главного меню профиля
+  profile:
+    title: "&8Профиль &7%player_name%"
+    # Заполнитель пустых слотов
+    filler:
+      material: GRAY_STAINED_GLASS_PANE
+      name: " "
+    
+    # Кнопка головы игрока
+    head:
+      slot: 10
+      name: "&eПрофиль &6%player_name%"
+      lore:
+        - "&7Информация о себе:"
+        - "&f%description%"
+        - ""
+        - "&7VK: &f%vk%"
+        - "&7Discord: &f%discord%"
+        - "&7Telegram: &f%telegram%"
+        - ""
+        - "&7Отзывов: &f%total_reviews%"
+        - "&7Оценка: &e%rating_stars% &7(%average_rating%)"
+
+    # Кнопка настроек
+    settings:
+      slot: 19
+      material: PAPER
+      name: "&6Настройки профиля"
+      lore:
+        - "&7Нажмите, чтобы изменить"
+        - "&7информацию о себе."
+
+    # Кнопка "Оставить отзыв"
+    leave_review:
+      slot: 28
+      material: MOJANG_BANNER_PATTERN
+      name: "&bОставить отзыв"
+      lore:
+        - "&7Нажмите, чтобы оценить"
+        - "&7этого игрока."
+
+    # Кнопка статистики
+    stats:
+      slot: 37
+      material: BOOK
+      name: "&eСтатистика игрока &6%player_name%"
+      lore:
+        - "&7Наиграно времени: &f%playtime%"
+        - "&7Статус: %status%"
+        - ""
+        - "&7Здесь можно увидеть"
+        - "&7подробные данные."
+
+    # Кнопка выхода
+    exit:
+      slot: 53
+      material: DARK_OAK_DOOR
+      name: "&cЗакрыть"
+
+    # Кнопки навигации
+    prev_page:
+      slot: 45
+      material: ARROW
+      name: "&eПредыдущая страница"
+    next_page:
+      slot: 52
+      material: ARROW
+      name: "&aСледующая страница"
+
+    # Иконка "Нет отзывов"
+    no_reviews:
+      slot: 22
+      material: NETHER_STAR
+      name: "&cОтзывов нет"
+      lore:
+        - "&7У этого игрока пока"
+        - "&7нет ни одного отзыва."
+
+  # Настройки меню создания отзыва
+  review:
+    title: "&8Отзыв для &7%player_name%"
+    
+    # Кнопка ввода текста
+    text_input:
+      slot: 0
+      material: WRITABLE_BOOK
+      name: "&bНажмите, чтобы ввести текст"
+      lore:
+        - "&7Текущий отзыв:"
+        - "&f%comment%"
+
+    # Кнопки оценки (1-5)
+    stars:
+      slot_start: 2
+      name: "&e%stars% Звезда"
+      selected_suffix: " &a(Выбрано)"
+
+    # Кнопка подтверждения
+    confirm:
+      slot: 24
+      material: EMERALD
+      name: "&aПодтвердить отзыв"
+
+    # Кнопка закрытия
+    exit:
+      slot: 26
+      material: BARRIER
+      name: "&cЗакрыть"
+
+  # Настройки меню настроек
+  settings:
+    title: "&8Настройки профиля"
+    
+    # Редактирование соц. сетей
+    vk:
+      slot: 10
+      material: PLAYER_HEAD
+      texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmJkNzNkNjE2ZDIxYzE5MzAxZjJmMDc2Y2JjNTQ3YzdjMWI1MWJkNWUxYTQ1ZDdjNTlkNWFkYjgyODA4ZSJ9fX0="
+      name: "&9VK"
+    discord:
+      slot: 12
+      material: PLAYER_HEAD
+      texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2I5NDg0M2QzNDBhYmFkYmQ2NDAxZWY0ZWM3NGRjZWM0YjY2OTY2MTA2NWJkMWEwMWY5YTU5MDVhODkxOWM3MiJ9fX0="
+      name: "&bDiscord"
+    telegram:
+      slot: 14
+      material: PLAYER_HEAD
+      texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2ViM2E1Mzk5MzdmOGU4ZTExNzAzNGE3MTczYmRkZWQ1YTAzMjNjOTc5NGFhZWRmMTkxODczMWY0Zjg3MjliYiJ9fX0="
+      name: "&3Telegram"
+    description:
+      slot: 16
+      material: PAPER
+      name: "&6Описание профиля"
+
+    # Переключатель видимости
+    visibility:
+      slot: 22
+      name: "&eВидимость профиля"
+      lore:
+        - "&7Нажмите, чтобы изменить"
+        - "&7приватность вашего профиля."
+      public:
+        material: LIME_DYE
+        name: "&aПубличный профиль"
+      private:
+        material: RED_DYE
+        name: "&cСкрытый профиль"
+
+    # Кнопка закрытия
+    exit:
+      slot: 26
+      material: BARRIER
+      name: "&cНазад в профиль"
+
+# ==========================================================
+#                  Сообщения Плагина
+# ==========================================================
+
+messages:
+  prefix: "&6&lПРОФИЛЬ &8» "
+  no_permission: "&cУ вас нет прав!"
+  player_not_found: "&cИгрок не найден."
+  db_error: "&cБаза данных недоступна. Попробуйте позже."
+  profile_hidden: "&cЭтот игрок скрыл свой профиль."
+  self_review_error: "&cНельзя оставлять отзывы самому себе!"
+  review_success: "&aВаш отзыв успешно сохранен!"
+  review_cancel: "&cВвод отзыва отменен."
+  enter_review: "&eВведите ваш отзыв в чат. Для отмены напишите &nотмена&e."
+  enter_social: "&eВведите ссылку/ник для &b%type%&e в чат. Для отмены напишите &nотмена&e."
+  social_updated: "&aДанные для &b%type%&a успешно обновлены!"
+  social_cancel: "&cОбновление данных отменено."
+  visibility_on: "&aВаш профиль теперь ПУБЛИЧНЫЙ."
+  visibility_off: "&cВаш профиль теперь СКРЫТ."
+  status_online: "&aОнлайн"
+  status_offline: "&7Оффлайн"
+
